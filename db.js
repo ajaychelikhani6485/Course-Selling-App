@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+mongoose.connect("")
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.Types.ObjectId;
 
@@ -30,14 +30,14 @@ const purchaseSchema = new Schema({
     courseId: ObjectId
 });
 
-const userModel = mongoose.model("user", userSchema);
-const adminModel = mongoose.model("admin", adminSchema);
-const courseModel = mongoose.model("course", courseSchema);
-const purchaseModel = mongoose.model("purchase", purchaseSchema);
+const usermodel = mongoose.model("user", userSchema);
+const adminmodel = mongoose.model("admin", adminSchema);
+const coursemodel = mongoose.model("course", courseSchema);
+const purchasemodel = mongoose.model("purchase", purchaseSchema);
 
-module.export = {
-    userModel,
-    adminModel,
-    courseModel,
-    purchaseModel
+module.exports = {
+    usermodel,
+    adminmodel,
+    coursemodel,
+    purchasemodel
 }
