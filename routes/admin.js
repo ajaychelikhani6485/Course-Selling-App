@@ -1,8 +1,10 @@
 const { Router, request } = require("express");
 const adminRouter = Router();
 const { adminmodel, coursemodel} = require("../db");
-const {JWT_ADMIN_PASSWORD}=require("../config");
 const jwt=require("jsonwebtoken");
+const {JWT_ADMIN_PASSWORD}=require("../config");
+const { adminMiddleware } = require("../middleware/admin");
+
 //bcrypt,zod,jsonwebtoken
 adminRouter.post("/signup", async function(req, res) {
     const {email,password,firstName,lastName}=req.body;
